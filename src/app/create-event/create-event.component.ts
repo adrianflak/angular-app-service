@@ -12,7 +12,7 @@ import { FormsModule } from '@angular/forms';
   RouterModule,
 FormsModule],
   template: `
-    <form *ngIf="event" #eventForm="ngForm" (ngSubmit)="saveEvent(eventForm.value)">
+    <form *ngIf="event" #eventForm="ngForm" (ngSubmit)="saveEvent()">
       <div class="form-group">
         <label for="name">Name: {{event.name}}</label>
         <input type="text" name="name" id="name" [(ngModel)]="event.name">
@@ -41,14 +41,14 @@ FormsModule],
   ]
 })
   export class CreateEventComponent {
-    event : eventType | undefined
+    event : eventType
     constructor(private eventService:EventService, private router:Router) {
       this.event = eventService.getEmptyEvent()
     }
 
-    saveEvent(event: eventType) {
+    saveEvent() {
       console.log("TEKST")
-      this.eventService.saveEvent(event)
+      this.eventService.saveEvent(this.event)
       this.router.navigate([''])
     }
 
