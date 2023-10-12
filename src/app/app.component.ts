@@ -5,6 +5,8 @@ import { PierwszyComponent } from './pierwszy/pierwszy.component';
 import { DrugiComponent } from './drugi/drugi.component';
 import { NgforComponent } from './ngfor/ngfor.component';
 import { App2Component } from './app2/app2.component';
+import { DyrektywangclassComponent } from './dyrektywangclass/dyrektywangclass.component';
+import { EventListComponent } from './event-list/event-list.component';
 
 
 
@@ -15,10 +17,13 @@ import { App2Component } from './app2/app2.component';
   PierwszyComponent,
 DrugiComponent,
 NgforComponent,
-App2Component],
+App2Component,
+DyrektywangclassComponent,
+EventListComponent],
   template: `
-
-    <app-app2></app-app2>
+  <app-event-list></app-event-list>
+    <!-- <app-app2></app-app2> -->
+    <app-dyrektywangclass></app-dyrektywangclass>
      <!-- ngStyle -->
      <div class="container" 
      [ngStyle]="{ 'background-color': bgcolor, 'color': fontcolor, 'font-size': fontsize }">Jakiś tekst</div>
@@ -26,11 +31,11 @@ App2Component],
 
      <nav [style.background-color]="red">Nawigacja</nav>
 
+  
 
-
-     <app-pierwszy></app-pierwszy>
+     <!-- <app-pierwszy></app-pierwszy>
      <app-drugi></app-drugi>
-     <app-ngfor></app-ngfor>
+     <app-ngfor></app-ngfor> -->
    
   `,
   styles: [],
