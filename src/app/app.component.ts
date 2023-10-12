@@ -7,55 +7,26 @@ import { NgforComponent } from './ngfor/ngfor.component';
 import { App2Component } from './app2/app2.component';
 import { DyrektywangclassComponent } from './dyrektywangclass/dyrektywangclass.component';
 import { EventListComponent } from './event-list/event-list.component';
-
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule,
-  PierwszyComponent,
-DrugiComponent,
-NgforComponent,
-App2Component,
-DyrektywangclassComponent,
-EventListComponent],
+    EventListComponent,
+    RouterModule],
   template: `
-  <app-event-list></app-event-list>
-    <!-- <app-app2></app-app2> -->
-    <app-dyrektywangclass></app-dyrektywangclass>
-     <!-- ngStyle -->
-     <div class="container" 
-     [ngStyle]="{ 'background-color': bgcolor, 'color': fontcolor, 'font-size': fontsize }">Jakiś tekst</div>
-
-
-     <nav [style.background-color]="red">Nawigacja</nav>
-
+  <!-- <app-event-list></app-event-list>
+       <app-dyrektywangclass></app-dyrektywangclass> -->
   
+  <router-outlet></router-outlet>
 
-     <!-- <app-pierwszy></app-pierwszy>
-     <app-drugi></app-drugi>
-     <app-ngfor></app-ngfor> -->
    
   `,
   styles: [],
 })
 export class AppComponent  {
-
- bgcolor: string;
- fontcolor: string;
- fontsize: string;
-
- red = "red";
-      constructor() {
-        this.bgcolor = "#cbcbcb";
-        this.fontcolor = "#000";
-        this.fontsize = "20px";
-      }
-  
-
-
-ngOnInit() {}
 
 
   

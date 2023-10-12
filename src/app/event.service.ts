@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class EventService {
 
-  getEvents() {
-    return [
+  private EVENTS = [
       {
+        id: 1,
         name: 'Spotkanie 1',
         date: '14.09.2023',
         time: '18.00',
@@ -21,6 +21,7 @@ export class EventService {
         onlineUrl: 'https://xyz.pl'
       },
       {
+        id: 2,
         name: 'Spotkanie 1',
         date: '14.09.2023',
         time: '18.00',
@@ -34,6 +35,7 @@ export class EventService {
         onlineUrl: 'https://xyz.pl'
       },
       {
+        id: 3,
         name: 'Spotkanie 1',
         date: '14.09.2023',
         time: '18.00',
@@ -46,9 +48,14 @@ export class EventService {
         format: "home",
         onlineUrl: 'https://xyz.pl'
       }
-
-
     ]
-  } 
+   
+    
+  getEvent(eventId:number) {
+    return this.EVENTS.find(event => event.id === eventId)
+  }
+  getEvents() {
+    return this.EVENTS
+  }
 
 }
