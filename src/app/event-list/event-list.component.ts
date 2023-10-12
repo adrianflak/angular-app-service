@@ -27,6 +27,7 @@ import { RouterModule } from '@angular/router';
               </tr>
             </tbody>
            </table>
+           <a [routerLink]="(['events/new'])">Create new Event</a>
   `,
   styles: [
   ]
